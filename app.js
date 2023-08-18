@@ -142,9 +142,9 @@ const hashedPassword = await bcrypt.hash(req.body.password,10);
 console.log("password: " + req.body.password);
 db.getConnection( async (err, connection) => {
  if (err) throw (err)
- const sqlSearch = "SELECT * FROM userTable WHERE user = ?"
+ const sqlSearch = "SELECT * FROM adminTable WHERE user = ?"
  const search_query = mysql.format(sqlSearch,[user])
- const sqlInsert = "INSERT INTO userTable VALUES (0,?,?)"
+ const sqlInsert = "INSERT INTO adminTable VALUES (0,?,?)"
  const insert_query = mysql.format(sqlInsert,[user, hashedPassword])
  // ? will be replaced by values
  // ?? will be replaced by string
@@ -195,7 +195,7 @@ app.post("/login", (req, res)=> {
     const password = req.body.password
     db.getConnection ( async (err, connection)=> {
      if (err) throw (err)
-     const sqlSearch = "Select * from userTable where user = ?"
+     const sqlSearch = "Select * from adminTable where user = ?"
      const search_query = mysql.format(sqlSearch,[user])
      connection.query(search_query, async (err, result) => {
             connection.release();
