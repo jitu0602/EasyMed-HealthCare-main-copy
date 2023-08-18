@@ -1,0 +1,64 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <!-- MENU BAR -->
+  
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      
+      <a class="navbar-brand" href="#">Hello Admin</a>
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item ">
+            <a class="nav-link" href="/relogin">Home <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active ">
+            <a class="nav-link" href="#">Reviews</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">logout</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+
+
+
+
+    <!-- columns in the customer table using cards -->
+
+<div class="container">
+  <div class="card-group"">
+    <% for(var result of results) { %>
+      <div class="col-lg-3">
+    <div class="card bg-light mb-3" style="max-width: 18rem;">
+    <div class="card-header"><%= result.rwr_name%></div>
+    <div class="card-body">
+      <h5 class="card-title"><%= result.rwr_email %></h5>
+      <p class="card-text"><%= result.rwr_text%></p>
+  </div>
+  </div>
+  </div>
+  <% } %>
+  </div>
+</div>
+
+  </body>
+  </html>
+    
+

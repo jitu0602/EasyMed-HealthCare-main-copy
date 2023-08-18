@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang ="en">
+    <head>
+       <title>EasyMed-Healthcare Login</title>
+        <link rel="stylesheet"href="/css/Signin_style.css"/>
+		<link rel="stylesheet" href="https://cdnjs.cloudfare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+<body>	
+<h2> EasyMed Sign in </h2>
+<div class="container" id="container">
+	
+	<div class="form-container sign-in-container">
+		<form action="/login" method="post">
+			<h1>Sign In</h1>
+			
+		
+			<span> use your account</span>
+			<input id="emailInput" type="email" name="email"placeholder="Email" />
+			<input id="passInput"	type="password"name="password" placeholder="Password" />
+			<a href="#">Forgot your password?</a>
+			<button type="submit">Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			
+			<div class="overlay-panel overlay-right">
+				<h1>Hello, Friend! Welcome to EasyMed</h1>
+				<p>Enter your personal details and start journey with us</p>
+			
+			</div>
+		</div>
+	</div>
+</div>
+<script src="./js/Signin_app.js"></script>
+
+
+</body>
+</html>
