@@ -10,7 +10,7 @@
 // 	container.classList.remove("right-panel-active");
 // });
 
-///CODED BY PIYUSH JAISWAL
+///CODED BY Jitendra Mewada
 
 //we want to connect to the database
 //with the help of express js 
@@ -122,7 +122,7 @@ db.getConnection( (err, connection)=> {
     console.log ("DB connected successful: " + connection.threadId)
  })
 
-console.log("hello");
+console.log("Welcome to EasyMed-HealthCare");
 
 
 
