@@ -68,6 +68,9 @@ app.get("/Signin_index",(req,res)=>{
     res.render("Signin_index");
     });
 
+    app.get("/SignUp",(req,res)=>{
+        res.render("SignUp");
+        });
 
 // app.get("/public/css/style.css",(req,res)=>{
 //     res.sendFile(path.join(__dirname,'public','css','style.css'));
@@ -137,8 +140,9 @@ app.use(express.json())
 //middleware to read req.body.<params>
 //CREATE USER
 app.post("/createUser", async (req,res) => {
-const user = req.body.name;
+const user = req.body.email;
 const hashedPassword = await bcrypt.hash(req.body.password,10);
+console.log("user :" + req.body.user);
 console.log("password: " + req.body.password);
 db.getConnection( async (err, connection) => {
  if (err) throw (err)
@@ -212,14 +216,14 @@ app.post("/login", (req, res)=> {
                 //get the hashedPassword from result
                 if (await bcrypt.compare(password, hashedPassword)) {
                    var admin_app_fun= function(){ console.log("---------> Login Successful");
-                                         console.log(result);
-                    //res.send(`${user} is logged in!`);
+                                        //  console.log(result);
+                    // res.send(`${user} is logged in!`);
                     const apt_search = "SELECT * FROM appointmentTable";
                     connection.query(apt_search, (err, results) => {
                         if (err)
                             throw (err);
-                        console.log(results);
-                        console.log(results.length);
+                        // console.log(results);
+                        // console.log(results.length);
                         res.render("admin", {
                             results: results
                         });
@@ -330,8 +334,8 @@ app.get("/admin_review", (req, res)=> {
         connection.query(apt_search, (err, results) => {
         if (err)
             throw (err);
-        console.log(results);
-        console.log(results.length);
+        // console.log(results);
+        // console.log(results.length);
         res.render("admin_review", {
 
         results: results
@@ -350,8 +354,8 @@ const apt_search = "SELECT * FROM appointmentTable";
 connection.query(apt_search, (err, results) => {
 if (err)
 throw (err);
-console.log(results);
-console.log(results.length);
+// console.log(results);
+// console.log(results.length);
 res.render("admin", {
 results: results
 });

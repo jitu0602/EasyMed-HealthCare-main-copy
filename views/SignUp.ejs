@@ -7,22 +7,21 @@
 
     </head>
 <body>	
-<h2> EasyMed Sign in </h2>
+<h2> EasyMed Sign Up </h2>
 <div class="container" id="container">
 	
 	<div class="form-container sign-in-container">
-		<form action="/login" method="post">
-			<h1>Sign In</h1>
+		<form action="/CreateUser" method="post">
+			<h1>Sign Up</h1>
 			
 		
-			<span> use your account</span>
-			<input id="emailInput" type="email" name="email"placeholder="Email" />
+			<span> Create your account</span>
+			<input id="user" type="email" name="email"placeholder="Email" />
 			<input id="passInput"	type="password"name="password" placeholder="Password" />
-			<a href="#">Forgot your password?</a>
-			<button type="submit">Sign In</button>
-			<!-- <link href="/SignUp"> Sign Up </link> -->
-			<a href="SignUp"><button type="button">Sign Up</button></a>
-		</form>
+			<!-- <a href="#">Forgot your password?</a> -->
+			<button type="submit">Sign Up</button>
+            <p>Already have an account ? <a  href="Signin_index"><b>Sign In</b></a></p>
+        </form>
 	</div>
 	<div class="overlay-container">
 		<div class="overlay">
